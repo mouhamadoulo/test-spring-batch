@@ -1,3 +1,27 @@
 spring:
   application:
     name: spbatch
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/db_spbatch
+    username: postgres
+    password: QRY25metzo????
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  batch:
+    jdbc:
+      initialize-schema: always
+    job:
+      enabled: false
+
+server:
+  port: 9090
